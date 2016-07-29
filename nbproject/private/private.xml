@@ -3,7 +3,57 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/_view.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/controllers/SiteController.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/models/LoginForm.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/models/Producto.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/admin.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/_form.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/components/Controller.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/index.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/models/Detallepedido.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/config/database.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/index.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/create.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/config/test.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/yiic</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/panel.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/yiic.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/controllers/UserController.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/_search.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/detallepedido/_form.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/update.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/themes/web/index.html</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/pages/about.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/_search.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/create.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/login.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/producto/_view.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/error.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/themes/classic/index.html</file>
+            <file>file:/C:/xampp/htdocs/supermercado/themes/classic/single.html</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/index.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/controllers/ProductoController.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/themes/classic/cart.html</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/components/UserIdentity.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/_view.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/config/main.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/update.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/index-test.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/config/console.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/admin.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/themes/classic/products.html</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/_form.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/_form.php</file>
             <file>file:/C:/xampp/htdocs/supermercado/index.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/admin.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/controllers/DetallepedidoController.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/_search.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/user/view.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/contact.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/site/index.php</file>
+            <file>file:/C:/xampp/htdocs/supermercado/protected/views/pedido/view.php</file>
         </group>
     </open-files>
 </project-private>

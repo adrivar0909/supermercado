@@ -1337,34 +1337,473 @@ Stack trace:
 #25 {main}
 REQUEST_URI=/supermercado/
 ---
-2016/05/19 02:37:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión.
-' in C:\xampp\htdocs\yii\framework\db\CDbConnection.php:399
+2016/07/07 23:13:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "clientes".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
 Stack trace:
-#0 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
-#1 C:\xampp\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
-#2 C:\xampp\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
-#3 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
-#4 C:\xampp\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('clientes')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/supermercado/index.php?r=clientes
+---
+2016/07/07 23:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pedido".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('pedido')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('pedido')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/pedido')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/supermercado/index.php?r=site/pedido
+---
+2016/07/12 22:20:33 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idProcuto" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idProcuto')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idProcuto')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idProcuto')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idProcuto', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idProcuto', Array)
 #5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
 #6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#7 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#8 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
-#9 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
-#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
-#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
-#12 C:\xampp\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
-#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
-#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
-#15 C:\xampp\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
-#16 C:\xampp\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
-#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#19 C:\xampp\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#20 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
-#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#23 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#24 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:21:06 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idProcuto" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idProcuto')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idProcuto')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idProcuto')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idProcuto', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idProcuto', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:21:10 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idProcuto" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idProcuto')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idProcuto')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idProcuto')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idProcuto', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idProcuto', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:21:39 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idPro" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idPro')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idPro')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idPro')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idPro', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idPro', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:23:02 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idPro" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idPro')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idPro')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idPro')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idPro', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idPro', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:23:05 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idPro" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idPro')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idPro')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idPro')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idPro', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idPro', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 22:23:10 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idPro" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idPro')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idPro')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idPro')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idPro', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(38): CActiveForm->dropDownList(Object(Detallepedido), 'idPro', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/index
+---
+2016/07/12 22:26:15 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idProcuto" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idProcuto')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idProcuto')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idProcuto')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idProcuto', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(43): CActiveForm->dropDownList(Object(Detallepedido), 'idProcuto', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/index
+---
+2016/07/12 22:26:20 [error] [exception.CException] exception 'CException' with message 'Property "Detallepedido.idProcuto" is not defined.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('idProcuto')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('idProcuto')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1981): CHtml::resolveValue(Object(Detallepedido), 'idProcuto')
+#3 C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php(914): CHtml::activeDropDownList(Object(Detallepedido), 'idProcuto', Array, Array)
+#4 C:\xampp\htdocs\supermercado\protected\views\detallepedido\_form.php(43): CActiveForm->dropDownList(Object(Detallepedido), 'idProcuto', Array)
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\supermercado\protected\views\detallepedido\create.php(18): CController->renderPartial('_form', Array)
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#13 C:\xampp\htdocs\supermercado\protected\controllers\DetallepedidoController.php(79): CController->render('create', Array)
+#14 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): DetallepedidoController->actionCreate()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('detallepedido/c...')
+#25 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#26 C:\xampp\htdocs\supermercado\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/supermercado/index.php?r=detallepedido/create
+HTTP_REFERER=http://localhost:8080/supermercado/index.php?r=detallepedido/admin
+---
+2016/07/12 16:07:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#5 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#6 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#7 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#8 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#11 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#12 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#13 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#14 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#15 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#16 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\index.php(13): CApplication->run()
 #25 {main}
 REQUEST_URI=/supermercado/
+---
+2016/07/12 16:08:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#5 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#6 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#7 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#8 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#11 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#12 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#13 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#14 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#15 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#16 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/supermercado/
+---
+2016/07/12 16:08:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#5 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#6 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#7 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#8 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#11 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#12 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#13 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#14 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#15 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#16 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/supermercado/index.php
+---
+2016/07/12 16:10:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#5 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#6 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#7 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#8 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#11 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#12 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#13 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#14 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#15 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#16 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/supermercado/index.php
+---
+2016/07/12 16:10:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] No connection could be made because the target machine actively refused it.
+' in C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php:399
+Stack trace:
+#0 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(347): CDbConnection->open()
+#1 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
+#2 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(394): CDbConnection->init()
+#3 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\main.php(17): CModule->__get('db')
+#5 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#6 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#7 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#8 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#9 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#10 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(214): COutputProcessor->run()
+#11 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#12 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\views\layouts\column1.php(6): CBaseController->endContent()
+#13 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(126): require('C:\\Bitnami\\wamp...')
+#14 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Bitnami\\wamp...', Array, true)
+#15 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(784): CBaseController->renderFile('C:\\Bitnami\\wamp...', Array, true)
+#16 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\protected\controllers\SiteController.php(32): CController->render('index')
+#17 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#18 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#20 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#21 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('')
+#22 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#23 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#24 C:\Bitnami\wampstack-5.6.22-0\apache2\htdocs\supermercado\index.php(13): CApplication->run()
+#25 {main}
+REQUEST_URI=/supermercado/index.php
 ---

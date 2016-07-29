@@ -40,7 +40,7 @@
                     
                     
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index'),
+				array('label'=>'Inicio', 'url'=>array('/site/index'),
                                     
 //      'linkOptions'=>array('id'=>'menuCompany'),
 //      'itemOptions'=>array('id'=>'itemCompany'),
@@ -51,11 +51,18 @@
 //        array('label'=>'Contact Us', 'url'=>array('/company/contactUs')),
 //        array('label'=>'Store Locator', 'url'=>array('/company/storeLocator')),)  
                                     ),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+
+                           // array('label'=>'Panel de control', 'url'=>array('/site/panel'), 'visible'=>!Yii::app()->user->isGuest),
+                            
+                            array('label'=>'Pedido', 'url'=>array('/pedido/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Detalle', 'url'=>array('/detallepedido/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Clientes', 'url'=>array('/cliente/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Categoria', 'url'=>array('/categoria/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Producto', 'url'=>array('/producto/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Envio', 'url'=>array('/enviador/admin'), 'visible'=>!Yii::app()->user->isGuest),
+                            array('label'=>'Sobre nosotros', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                            array('label'=>'Panel de control', 'url'=>array('/site/panel'), 'visible'=>!Yii::app()->user->isGuest),
-                            array('label'=>'Producto', 'url'=>array('/producto/admin'), 'visible'=>!Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
                     'htmlOptions' => array('class' => 'nav navbar-nav'),
