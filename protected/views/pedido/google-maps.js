@@ -9,7 +9,7 @@ function closeInfoWindow() {
  
 function initialize() {
   geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(20.68009, -101.35403);
+  var latlng = new google.maps.LatLng(20.68008, -101.35402);
   var mapOptions = {
     zoom: 8,
     center: latlng,
@@ -21,6 +21,7 @@ function initialize() {
             closeInfoWindow();
           });
 }
+
  
 function codeLatLng() {
   var input = $('#latlng').val();
