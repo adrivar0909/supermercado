@@ -7,11 +7,13 @@
  * @property integer $idPedido
  * @property integer $idCliente
  * @property integer $idEnviador
- * @property double $latitud
- * @property double $longitud
+ * @property string $latitud
+ * @property string $longitud
  * @property string $fecha
  * @property string $estado
  * @property double $monto
+ * @property string $cliente
+ * @property string $direccion
  *
  * The followings are the available model relations:
  * @property Detallepedido[] $detallepedidos
@@ -36,13 +38,15 @@ class Pedido extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('cliente, direccion', 'required'),
 			array('idCliente, idEnviador', 'numerical', 'integerOnly'=>true),
-			array('latitud, longitud, monto', 'numerical'),
-			array('fecha', 'length', 'max'=>50),
+			array('monto', 'numerical'),
+			array('latitud, longitud, direccion', 'length', 'max'=>100),
+			array('fecha, cliente', 'length', 'max'=>50),
 			array('estado', 'length', 'max'=>1),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idPedido, idCliente, idEnviador, latitud, longitud, fecha, estado, monto', 'safe', 'on'=>'search'),
+			array('idPedido, idCliente, idEnviador, latitud, longitud, fecha, estado, monto, cliente, direccion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +78,8 @@ class Pedido extends CActiveRecord
 			'fecha' => 'Fecha',
 			'estado' => 'Estado',
 			'monto' => 'Monto',
+			'cliente' => 'Cliente',
+			'direccion' => 'Direccion',
 		);
 	}
 
@@ -98,11 +104,13 @@ class Pedido extends CActiveRecord
 		$criteria->compare('idPedido',$this->idPedido);
 		$criteria->compare('idCliente',$this->idCliente);
 		$criteria->compare('idEnviador',$this->idEnviador);
-		$criteria->compare('latitud',$this->latitud);
-		$criteria->compare('longitud',$this->longitud);
+		$criteria->compare('latitud',$this->latitud,true);
+		$criteria->compare('longitud',$this->longitud,true);
 		$criteria->compare('fecha',$this->fecha,true);
 		$criteria->compare('estado',$this->estado,true);
 		$criteria->compare('monto',$this->monto);
+		$criteria->compare('cliente',$this->cliente,true);
+		$criteria->compare('direccion',$this->direccion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

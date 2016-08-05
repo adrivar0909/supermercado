@@ -38,6 +38,14 @@
 	<?php echo CHtml::encode($data->monto); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('cliente')); ?>:</b>
+	<?php echo CHtml::encode($data->cliente); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('direccion')); ?>:</b>
+	<?php echo CHtml::encode($data->direccion); ?>
+	<br />
+
 	*/ ?>
 
 </div>

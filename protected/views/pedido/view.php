@@ -29,5 +29,7 @@ $this->menu=array(
 		'fecha',
 		'estado',
 		'monto',
+		'cliente',
+		'direccion',
 	),
 )); ?>

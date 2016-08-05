@@ -28,12 +28,12 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'latitud'); ?>
-		<?php echo $form->textField($model,'latitud'); ?>
+		<?php echo $form->textField($model,'latitud',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->label($model,'longitud'); ?>
-		<?php echo $form->textField($model,'longitud'); ?>
+		<?php echo $form->textField($model,'longitud',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row">
@@ -49,6 +49,16 @@
 	<div class="row">
 		<?php echo $form->label($model,'monto'); ?>
 		<?php echo $form->textField($model,'monto'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'cliente'); ?>
+		<?php echo $form->textField($model,'cliente',array('size'=>50,'maxlength'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'direccion'); ?>
+		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>100)); ?>
 	</div>
 
 	<div class="row buttons">

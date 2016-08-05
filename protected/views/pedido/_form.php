@@ -19,29 +19,27 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
-
-        
-        <div class="row">
-		<?php echo $form->labelEx($model,'idCliente'); ?>		
-                <?php echo $form->dropDownList($model,'idCliente', CHtml::listData(Cliente::model()->findAll(),'idCliente','nombre')); ?> 
+	<div class="row">
+		<?php echo $form->labelEx($model,'idCliente'); ?>
+		<?php echo $form->textField($model,'idCliente'); ?>
 		<?php echo $form->error($model,'idCliente'); ?>
 	</div>
 
-        <div class="row">
-		<?php echo $form->labelEx($model,'idEnviador'); ?>		
-                <?php echo $form->dropDownList($model,'idEnviador', CHtml::listData(Enviador::model()->findAll(),'idEnviador','nombre')); ?> 
+	<div class="row">
+		<?php echo $form->labelEx($model,'idEnviador'); ?>
+		<?php echo $form->textField($model,'idEnviador'); ?>
 		<?php echo $form->error($model,'idEnviador'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'latitud'); ?>
-		<?php echo $form->textField($model,'latitud'); ?>
+		<?php echo $form->textField($model,'latitud',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'latitud'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'longitud'); ?>
-		<?php echo $form->textField($model,'longitud'); ?>
+		<?php echo $form->textField($model,'longitud',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'longitud'); ?>
 	</div>
 
@@ -61,6 +59,18 @@
 		<?php echo $form->labelEx($model,'monto'); ?>
 		<?php echo $form->textField($model,'monto'); ?>
 		<?php echo $form->error($model,'monto'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'cliente'); ?>
+		<?php echo $form->textField($model,'cliente',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'cliente'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'direccion'); ?>
+		<?php echo $form->textField($model,'direccion',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'direccion'); ?>
 	</div>
 
 	<div class="row buttons">
